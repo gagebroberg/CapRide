@@ -11,17 +11,10 @@ struct HomePageView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                Text("Welcome to Ride Me!")
-                    .font(.largeTitle)
-                
-                NavigationLink(destination: MapView()) {
-                    Text("Open Map")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
+            VStack(spacing: 30) {
+                Image("RideScanLogo")
+                    .resizable() // Make the image resizable
+                    .frame(width: 275, height: 150) // Set the desired width and height
                 
                 NavigationLink(destination: FetiiDriversView()) {
                     Text("Get nearest fetii driver")
@@ -32,6 +25,8 @@ struct HomePageView: View {
                 }
             }
             .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
+            .background(Color.white) // Set background color to white
         }
     }
 }
